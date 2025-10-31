@@ -19,8 +19,9 @@ app.get("/health", (req: Request, res: Response) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 });
 
-const PORT = process.env.PORT || 5000;
+// ✅ Ensure PORT is a number and bind to 0.0.0.0 for Railway
+const PORT = Number(process.env.PORT) || 5000;
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`✅ Server running on port ${PORT}`);
 });
