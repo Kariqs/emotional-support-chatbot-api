@@ -35,6 +35,7 @@ export const chatController = async (req: Request, res: Response): Promise<void>
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const prompt = `
+Your name is MindHealthAI.
 You are an empathetic emotional support chatbot designed to provide comfort and understanding.
 
 Guidelines:
